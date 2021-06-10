@@ -1,0 +1,89 @@
+.view {
+  overflow: auto;
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  .scale {
+    position: absolute;
+    background-image: url(../image/null.png);
+    overflow: hidden;
+
+    .dropBody {
+      position: absolute;
+      top: 50px;
+      left: 50px;
+      // margin: 50px;
+      background-color: var(--bg-color);
+    }
+    .drops {
+      position: absolute;
+      left: 50px;
+      top: 50px;
+      width: calc(100% - 74px);
+      height: calc(100% - 74px);
+    }
+
+    .body {
+      background-color: var(--ct-color);
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      background-image: url(../image/null.png);
+
+      .boxList {
+        background-color: var(--ct-color);
+        background-size: auto 100%;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+.ruler {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 0;
+  height: 0;
+
+  .width {
+    position: absolute;
+    background-color: var(--bg-color);
+    // padding-left: 55px;
+    width: 1920px;
+    height: 27px;
+  }
+
+  .height {
+    position: absolute;
+    background-color: var(--bg-color);
+    // padding-top: 55px;
+    width: 27px;
+    height: 1080px;
+  }
+}
+.thumbnail {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+.menu {
+  z-index: 3001;
+  min-width: 78px;
+}
+.editSlider {
+  background-color: var(--bg-color);
+  height: 30px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  box-shadow: 0 -1px #000;
+  user-select: none;
+  z-index: 99;
+}

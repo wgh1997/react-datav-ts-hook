@@ -1,0 +1,54 @@
+.menus {
+  width: 220px;
+  height: 100%;
+  background-color: #1e2535;
+  display: -webkit-flex;
+  display: flex;
+  border-right: solid 2px #12161f;
+  transition: width 0.3s ease;
+  .nav {
+    width: 50px;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    .btn {
+      color: var(--font-color);
+      display: block;
+      margin: 10px auto;
+      cursor: pointer;
+    }
+  }
+  .content {
+    .switch {
+      height: 26px;
+      display: -webkit-flex;
+      display: flex;
+      justify-content: space-between;
+      background-color: #2e343c;
+      > div {
+        width: 100%;
+        text-align: center;
+        line-height: 26px;
+        cursor: pointer;
+      }
+      .active {
+        background-color: var(--bg-color);
+      }
+    }
+    .list {
+      box-sizing: border-box;
+      padding: 4px 0;
+      width: 100%;
+      display: -webkit-flex;
+      display: flex;
+      background-color: var(--bg-color);
+      min-width: 170px;
+      height: calc(100% - 56px);
+      overflow: auto;
+      > div {
+        padding-right: 10px;
+        width: 100%;
+      }
+    }
+  }
+}

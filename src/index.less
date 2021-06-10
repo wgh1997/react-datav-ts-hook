@@ -1,0 +1,40 @@
+// @import '~antd/dist/antd.less';
+@import '~antd/dist/antd.dark.less'; // 引入官方提供的暗色 less 样式入口文件
+@import '~antd/dist/antd.compact.less'; // 引入官方提供的紧凑 less 样式入口文件
+@import './assets/iconfont/iconfont.css';
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  --font-color: #d7dce2;
+  --font-size: 14px;
+  --bg-color: #171c28;
+  --ct-color: #1d2433;
+  --border-color: hsla(0, 0%, 100%, 0.3);
+  --moveable-line-color: #6755dd;
+  --moveable-block-color: #a7aabb;
+  color: #d7dce2;
+  user-select: none;
+  font-size: 12px;
+}
+.moveable-control {
+  background-color: var(--moveable-block-color) !important;
+  width: 6px !important;
+  height: 6px !important;
+  margin-left: -3px !important;
+  margin-top: -3px !important;
+  border: 0px !important;
+}
+.moveable-rotation-control {
+  background-color: var(--moveable-line-color) !important;
+}
+.moveable-button {
+  background-color: var(--moveable-line-color) !important;
+}
+.moveable-dimension {
+  background-color: var(--moveable-line-color) !important;
+}
