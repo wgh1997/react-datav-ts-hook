@@ -1,13 +1,14 @@
-import React from 'react'
+import React, { useState, useContext } from 'react'
 import Drag from '@components/drag'
 import { Collapse } from 'antd'
-import { menu, ehartOption } from '@config/menu'
+import { menu, ehartOption, staticState } from '@config/menu'
 import styles from './assembly.module.less'
-
+import { MenuContext } from "./MenuContext";
 const { Panel } = Collapse
 const Assembly = () => {
+  const Menu = useContext(MenuContext);
   const getMenu = () => {
-    return menu.map((item, index) => {
+    return Menu['navname'].map((item, index) => {
       return (
         <Panel header={item.title} key={index} className="panel">
           {getList(item.children)}

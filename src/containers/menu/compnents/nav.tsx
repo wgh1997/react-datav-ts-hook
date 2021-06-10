@@ -1,11 +1,16 @@
-import React from 'react'
+import React, { useState, useContext } from 'react'
+import { MenuContext } from "./MenuContext";
 import { nav } from '@config/menu'
 import styles from './nav.module.less'
-const Nav = () => {
+const Nav = (props) => {
+  const Menu = useContext(MenuContext);
+  const { setnavname } = props;
   const getNav = () => {
     return nav.map((item, index) => {
       return (
-        <div className={styles.item} key={index}>
+        <div className={styles.item} key={index} onClick={() => {
+          setnavname(item.navname)
+        }}>
           <i className={`iconfont ${item.icon} `}></i>
         </div>
       )
@@ -14,3 +19,5 @@ const Nav = () => {
   return <>{getNav()}</>
 }
 export default Nav
+
+

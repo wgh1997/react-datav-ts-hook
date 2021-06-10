@@ -2,6 +2,7 @@ const menu = [
   {
     title: '柱状图',
     icon: '',
+    
     children: [
       {
         id: 1,
@@ -102,14 +103,39 @@ const menu = [
     ],
   },
 ]
+const staticState=[
+  {
+    title: '边框',
+    icon: '',
+    children: [
+      {
+        id: 1,
+        title: 'BorderBox1',
+        icon: '',
+        widget: 'echart',
+        imgPath: './image/chart/1.png',
+      },
+      {
+        id: 2,
+        title: 'BorderBox2',
+        icon: '',
+        widget: 'echart',
+        imgPath: './image/chart/1.png',
+      },
+      
+    ],
+  },
+]
 const nav = [
   {
     name: '图表',
     icon: 'iconmodular',
+    navname:menu
   },
   {
     name: '静态',
     icon: 'iconfile-open',
+    navname:staticState
   },
   {
     name: '地图',
@@ -407,4 +433,4 @@ const configData = {
     },
   ],
 }
-export { menu, nav, ehartOption }
+export { menu, nav, ehartOption,staticState,configData }
