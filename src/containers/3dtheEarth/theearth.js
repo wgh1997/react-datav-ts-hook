@@ -10,12 +10,14 @@ class BugCount extends React.Component {
         init() {
                 let renderer, camera, scene, gui, light, stats, controls, geometry, material, line, matLine, mesh, group, radius = 5, groupDots, groupLines, groupHalo, aGroup;
                 const Dom = document.querySelector('#container');
+                // Dom.clearColor(0, 0, 0, 0)
                 const width = Dom.clientWidth, height = Dom.clientHeight;
                 group = new THREE.Group();
                 groupDots = new THREE.Group();
                 groupLines = new THREE.Group();
                 groupHalo = new THREE.Group();
                 aGroup = new THREE.Group();
+               
 
                 const posArr = [{ "x": 0.5738958419746141, "y": -0.44114968930852216, "z": 4.9473255920938985 }, { "x": -0.9326350073394328, "y": 2.8399222968004114, "z": -4.00812091773949 }, { "x": 3.469198597393574, "y": 1.2295167303380952, "z": -3.3842206934036057 }, { "x": -2.4019084876611916, "y": -2.190220428765315, "z": 3.7991801866087123 }, { "x": -2.49363689878109, "y": -4.099696049856375, "z": 1.4050862307450966 }, { "x": -2.3729307780326305, "y": 2.840227787960863, "z": 3.3618901878497454 }, { "x": -2.0636200279017873, "y": 0.7444294629976027, "z": -4.493027615657812 }, { "x": 0.47725894517680106, "y": 2.4327372143508037, "z": -4.34212085796347 }, { "x": -2.4777001955161246, "y": -1.2092952460724242, "z": 4.171163716394502 }, { "x": -0.03915748918627658, "y": -0.008362945319338826, "z": 4.999839672648135 }, { "x": 1.5223738738260317, "y": -1.032865814102439, "z": -4.649254348640267 }, { "x": -0.26640112020426315, "y": -4.314854187280748, "z": 2.5121830716848077 }, { "x": -4.031470206741836, "y": -2.606648761952297, "z": -1.3973654511134501 }, { "x": 0.8544382232162094, "y": 1.5274953155132989, "z": 4.683662390031124 }, { "x": 3.0409624989238546, "y": 1.76433738825175, "z": -3.555230043268055 }, { "x": -4.721251023266457, "y": 1.2354922989397954, "z": -1.0878177947459262 }, { "x": 2.1518961827021106, "y": 3.891904027152385, "z": -2.285262755638206 }, { "x": 0.8501960736517479, "y": -2.851729208821255, "z": -4.018060123480341 }, { "x": 2.5631840141785176, "y": 4.263234820997851, "z": -0.5048926326370041 }, { "x": -0.4580143454812531, "y": -2.6523265200067385, "z": 4.213714144386437 }];
 
@@ -108,10 +110,14 @@ class BugCount extends React.Component {
                 */
                 function initRenderer() {
                         renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+                        renderer.setClearColor(0xffffff, 0)
+                        renderer.setClearAlpha(0);
                         renderer.setPixelRatio(window.devicePixelRatio);
                         renderer.setSize(width, height);
                         const containerDom = document.querySelector('#container');
+                        
                         containerDom.appendChild(renderer.domElement);
+                       
                 }
 
                 /**
@@ -129,8 +135,8 @@ class BugCount extends React.Component {
                  */
                 function initScene() {
                         scene = new THREE.Scene();
-                        scene.background = new THREE.Color(0xa0a0a0);
-                        scene.fog = new THREE.Fog(0xa0a0a0, 200, 1000);
+                        scene.background = new THREE.Color(0x000000);
+                        scene.fog = new THREE.Fog('0x000000', 200, 1000);
                         window.scene = scene;
 
                         // ground
@@ -378,7 +384,7 @@ class BugCount extends React.Component {
                                 aGroup.rotation.y = aGroup.rotation.y + 0.001;
                                 renders();
                                 animate();
-                        },100);
+                        });
                 }
                
                         initRenderer()
@@ -400,7 +406,7 @@ class BugCount extends React.Component {
 
 
                 return (
-                        <div   id="container" style={{ width: '100%', height: '100vh', position: 'relative', overflow: 'hidden' }}></div>
+                        <div   id="container" style={{ width: '50%', height: '100vh', position: 'relative', overflow: 'hidden' , margin: '0 auto'}}></div>
 
                 )
         }
