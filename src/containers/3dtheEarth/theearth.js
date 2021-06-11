@@ -43,7 +43,7 @@ class BugCount extends React.Component {
                                 var dotGeo = new THREE.SphereGeometry(0.1, 0.2, 0.2);
                                 var dotMater = new THREE.MeshPhongMaterial({ color: 'tomato' });
                                 var dotMesh = new THREE.Mesh(dotGeo, dotMater);
-                                // var pos = getPos(radius, Math.PI * 2 * Math.random(), Math.PI * 2 * Math.random());
+                                var pos = getPos(radius, Math.PI * 2 * Math.random(), Math.PI * 2 * Math.random());
                                 dotMesh.position.set(pos.x, pos.y, pos.z);
                                 group.add(dotMesh);
                         })
@@ -173,7 +173,7 @@ class BugCount extends React.Component {
                         controls.enableZoom = true;
                         //是否自动旋转
                         controls.autoRotate = true;
-                        controls.autoRotateSpeed = 2;
+                        controls.autoRotateSpeed = 10;
                         //设置相机距离原点的最远距离
                         // controls.minDistance = 2;
                         //设置相机距离原点的最远距离
@@ -378,7 +378,7 @@ class BugCount extends React.Component {
                                 aGroup.rotation.y = aGroup.rotation.y + 0.001;
                                 renders();
                                 animate();
-                        });
+                        },100);
                 }
                
                         initRenderer()
@@ -386,7 +386,7 @@ class BugCount extends React.Component {
                         initScene();
                         initLight();
                         // initAuxiliaryTool();
-                        // initStats();
+                        initStats();
                         initObject();
                         // initOrbitControls();
                         initControls();
