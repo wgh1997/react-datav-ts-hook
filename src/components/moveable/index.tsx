@@ -557,11 +557,10 @@ const MoveableBox: ForwardRefRenderFunction<cRef, props> = (map, childRef) => {
         className={styles.loop}
         style={{
           backgroundImage: `url(${backgroundImage})`,
-          backgroundColor: `${
-            typeof backgroundColor === 'string'
+          backgroundColor: `${typeof backgroundColor === 'string'
               ? backgroundColor
               : `rgba(${backgroundColor.r}, ${backgroundColor.g}, ${backgroundColor.b}, ${backgroundColor.a})`
-          }`,
+            }`,
 
           backgroundSize: 'auto 100%',
         }}
@@ -577,13 +576,12 @@ const MoveableBox: ForwardRefRenderFunction<cRef, props> = (map, childRef) => {
               <div
                 key={item.id}
                 id={item.id}
-                className={`${styles.model} ${
-                  targets.find((target) => {
-                    return target.id === item.id
-                  }) !== undefined
+                className={`${styles.model} ${targets.find((target) => {
+                  return target.id === item.id
+                }) !== undefined
                     ? styles.select
                     : ''
-                } modelItem`}
+                  } modelItem`}
                 style={{
                   width: `${item.drag.w}px`,
                   height: `${item.drag.h}px`,

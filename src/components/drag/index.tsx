@@ -41,7 +41,7 @@ const Drag = ({ option, data, children }: BoxProps) => {
   })
   const opacity = dragging ? 0.8 : 1
   return (
-    <div {...getDragProps({ option, data })} style={{ ...style, opacity }}>
+    <div {...getDragProps({ option, data })} style={{ ...style, opacity }}>      
       {children}
     </div>
   )

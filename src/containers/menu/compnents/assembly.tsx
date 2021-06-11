@@ -19,6 +19,7 @@ const Assembly = () => {
   const getList = (list) => {
     return list.map((item, index) => {
       const option = ehartOption[item.id]
+      
       return (
         <div className={styles.item} key={index}>
           <Drag key={index} option={option} data={item}>
