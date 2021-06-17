@@ -1,6 +1,7 @@
 // 引入路由视图组件
 import Home from '@containers/layout'
 import DtheEarth from '@containers/3dtheEarth/index'
+import Dome from '@containers/dome/index'
 // 路由配置表  数组
 const routes = [
         {
@@ -9,6 +10,10 @@ const routes = [
         },{
                 path: '/DtheEarth',
                 component: DtheEarth,
+        }
+        ,{
+                path: '/Dome',
+                component: Dome,
         }
 
 ];

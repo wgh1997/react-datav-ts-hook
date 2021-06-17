@@ -226,6 +226,7 @@ const MoveableBox: ForwardRefRenderFunction<cRef, props> = (map, childRef) => {
             transform: `translate(${pos2[0]}px, ${pos2[1]}px) rotate(${rect.rotation}deg) translate(10px)`,
           }}
         >
+        
           <button className="moveable-button" onClick={handleDelete}></button>
         </EditableViewer>
       )
@@ -345,9 +346,11 @@ const MoveableBox: ForwardRefRenderFunction<cRef, props> = (map, childRef) => {
     }
     return newArr
   }
-
+ 
   return (
+
     <div className={styles.body} id="moveable">
+     
       <Moveable
         ref={moveableRef}
         className={styles.moveable}
@@ -360,7 +363,7 @@ const MoveableBox: ForwardRefRenderFunction<cRef, props> = (map, childRef) => {
           modelRotateName: modelRotate,
         }}
         target={targets} //
-        origin={false} //中心圆点
+        origin={true} //中心圆点
         draggable={true}
         resizable={true}
         rotatable={true}
@@ -552,7 +555,6 @@ const MoveableBox: ForwardRefRenderFunction<cRef, props> = (map, childRef) => {
             ` rotate(${rotate}deg)`
         }}
       />
-
       <div
         className={styles.loop}
         style={{
@@ -570,7 +572,9 @@ const MoveableBox: ForwardRefRenderFunction<cRef, props> = (map, childRef) => {
       >
         {
           // Object.values(frameMap).map((item: any, index) => {
+        
           FlatArr(boxOrder).map((o: any, index) => {
+           
             const item = frameMap[o]
             return (
               <div
@@ -588,6 +592,7 @@ const MoveableBox: ForwardRefRenderFunction<cRef, props> = (map, childRef) => {
                   transform: `translate(${item.position.x}px, ${item.position.y}px) rotate( ${item.rotate}deg )`,
                 }}
               >
+              
                 <Widget
                   id={item.id}
                   active={

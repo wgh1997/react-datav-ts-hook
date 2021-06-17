@@ -12,7 +12,7 @@ const DtheEarth = (props) => {
   })
 
   return (
-    <div>
+    <div >
       <Theearth></Theearth>
     </div>
   )

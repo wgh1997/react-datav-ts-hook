@@ -75,6 +75,7 @@ const View = (props: props) => {
 
   return (
     <>
+  
       <div className={styles.ruler}>
         <div
           className={styles.width}
@@ -85,6 +86,7 @@ const View = (props: props) => {
               size.width + RULER + PAGE_MARGIN.left + PAGE_MARGIN.right + 'px',
           }}
         >
+         
           <Guides
             negativeRuler={false}
             textAlign={'left'}
@@ -118,6 +120,7 @@ const View = (props: props) => {
               size.height + RULER + PAGE_MARGIN.top + PAGE_MARGIN.bottom + 'px',
           }}
         >
+         
           <Guides
             negativeRuler={false}
             textAlign={'right'}
@@ -143,7 +146,9 @@ const View = (props: props) => {
           />
         </div>
       </div>
+    
       <div className={styles.view} id="view" ref={view}>
+      
         <div
           id="scale"
           onContextMenu={displayMenu}

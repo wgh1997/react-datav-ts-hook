@@ -96,6 +96,7 @@ const Home = ({ history }: any) => {
        
       </div>
       <div id="container" className={styles.container}>
+     
         <View
           box={box}
           boxOrder={boxOrder}
@@ -106,8 +107,10 @@ const Home = ({ history }: any) => {
           changeBox={changeBox}
           setBoxOrder={setBoxOrder}
         />
+     
       </div>
       <div className={styles.attr}>
+     
         <Config
           screenName={screenName}
           backgroundImage={backgroundImage}
